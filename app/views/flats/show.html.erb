@@ -1,0 +1,14 @@
+<div class="card">
+<h2><%= @flat.name %></h2>
+<p><%= @flat.address %></p>
+</div>
+<div class="card">
+<h4>A bit more about this flat...</h4>
+<p><%= @flat.description %></p>
+</div>
+<div class="card">
+<h4>Details</h4>
+<i class="fa-solid fa-euro-sign"></i> <%=@flat.price_per_night %>
+<i class="fa-solid fa-people-roof"></i> <%=@flat.number_of_guests %>
+</div>
+<%= link_to "Simple Airbnb", flats_path %>

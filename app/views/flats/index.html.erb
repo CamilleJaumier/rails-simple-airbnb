@@ -1,0 +1,18 @@
+<h1>All our Flats (<%= @flats.count%>)</h1>
+<div id="restaurants">
+<% @flats.each do |flat|%>
+  <%= flat.name %>
+  <%= flat.address %>
+  <i class="fa-solid fa-euro-sign"></i> <%=flat.price_per_night %>
+  <i class="fa-solid fa-people-roof"></i> <%=flat.number_of_guests %>
+  <p>
+    <%= link_to "More info", flat %>
+    <%= link_to "Edit", edit_flat_path(flat) %>
+    <%= link_to "Remove",
+    flat_path(flat),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+  </p>
+<% end %>
+</div>
+
+<%= link_to "Add flat", new_flat_path %>
